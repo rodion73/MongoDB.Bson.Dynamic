@@ -3,9 +3,35 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{38064FB7-8C74-413C-BC3E-334A3C95B754}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{AEE0EC0C-1DDA-4FC2-8C98-E5991DBD0BFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoDB.Bson.Dynamic", "src\MongoDB.Bson.Dynamic\MongoDB.Bson.Dynamic.csproj", "{8E025A0B-06E6-40FA-AA39-03627F87954C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.MongoDB.Bson.Dynamic", "test\Test.MongoDB.Bson.Dynamic\Test.MongoDB.Bson.Dynamic.csproj", "{3FF120E1-1E2C-4857-841D-01C62C2B89E7}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E025A0B-06E6-40FA-AA39-03627F87954C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E025A0B-06E6-40FA-AA39-03627F87954C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E025A0B-06E6-40FA-AA39-03627F87954C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E025A0B-06E6-40FA-AA39-03627F87954C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FF120E1-1E2C-4857-841D-01C62C2B89E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FF120E1-1E2C-4857-841D-01C62C2B89E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FF120E1-1E2C-4857-841D-01C62C2B89E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FF120E1-1E2C-4857-841D-01C62C2B89E7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8E025A0B-06E6-40FA-AA39-03627F87954C} = {38064FB7-8C74-413C-BC3E-334A3C95B754}
+		{3FF120E1-1E2C-4857-841D-01C62C2B89E7} = {AEE0EC0C-1DDA-4FC2-8C98-E5991DBD0BFA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C17A8FF6-7CEA-4178-B1BB-D4B0F46006D6}
