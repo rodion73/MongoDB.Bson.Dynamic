@@ -1,4 +1,5 @@
 using FluentAssertions;
+using System;
 using Xunit;
 
 namespace MongoDB.Bson
@@ -8,7 +9,7 @@ namespace MongoDB.Bson
         #region Public Methods
 
         [Fact]
-        public void ToDynamic_Array()
+        public void Array()
         {
             var data = new[] { "foo", "bar", "baz" };
             var testee1 = new BsonArray(data);
@@ -20,7 +21,7 @@ namespace MongoDB.Bson
         }
 
         [Fact]
-        public void ToDynamic_BinaryData()
+        public void BinaryData()
         {
             var data = new byte[] { 42, 17, 93 };
             var testee1 = new BsonBinaryData(data);
@@ -32,17 +33,39 @@ namespace MongoDB.Bson
         }
 
         [Fact]
-        public void ToDynamic_Boolean()
+        public void Boolean()
         {
             var data = true;
-            var testee1 = new BsonBoolean(data);
-            BsonValue testee2 = testee1;
-            var result1 = testee1.ToDynamic();
-            var result2 = testee2.ToDynamic();
-            ((bool)result1).Should().Be(data);
-            ((bool)result2).Should().Be(data);
+            TestToDynamic(new BsonBoolean(data), data);
+        }
+
+        [Fact]
+        public void DateTime()
+        {
+            var data = new DateTime(1973, 9, 8, 7, 42, 39, DateTimeKind.Utc);
+            TestToDynamic(new BsonDateTime(data), data);
+        }
+
+        [Fact]
+        public void Decimal128()
+        {
+            var data = 42.69m;
+            TestToDynamic(new BsonDecimal128(data), data);
         }
 
         #endregion Public Methods
+
+        #region Private Methods
+
+        private void TestToDynamic<TBsonType, TCliType>(TBsonType testee, TCliType expected) where TBsonType : BsonValue
+        {
+            BsonValue testee2 = testee;
+            var result = testee.ToDynamic();
+            var result2 = testee2.ToDynamic();
+            ((TCliType)result).Should().Be(expected);
+            ((TCliType)result2).Should().Be(expected);
+        }
+
+        #endregion Private Methods
     }
 }
