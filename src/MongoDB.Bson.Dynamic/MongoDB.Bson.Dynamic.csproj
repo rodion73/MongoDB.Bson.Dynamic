@@ -8,6 +8,8 @@
     <PackageTags>mongodb, bson, dynamic</PackageTags>
     <PackageProjectUrl>https://github.com/rodion73/MongoDB.Bson.Dynamic</PackageProjectUrl>
     <Description>Extension methods to convert any BsonValue to dynamics.</Description>
+    <Company />
+    <PackageLicenseUrl>https://github.com/rodion73/MongoDB.Bson.Dynamic/blob/master/LICENSE</PackageLicenseUrl>
   </PropertyGroup>
 
   <ItemGroup>
